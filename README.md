@@ -24,7 +24,7 @@ The tutorial is based on [FULL Introduction To HTMX Using Golang](https://www.yo
 
   * Setup: step by step [tutorial](Tutorial.md) to setup Elixir Phoenix
 with the basic to work with HTMX
-  * Step 1: 
+  * Step 1: Impement a [Counter](Step1.md) with HTMX
 
 
 ## HTMX Resources

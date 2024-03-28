@@ -178,19 +178,19 @@ HdaHtmx
   - Add a target to the button
   - hx-target="body"
 
-  This works but we still send all the response back.
+  This works but we still send all the response back, and replace the body.
 
  A better solution is to 
 
  Create a fragment template _counter.html.heex
-```
+```html
  <%= @count %>
 
 ```
 
 Then use it from the home template like this
 
-```
+```html
     <div id="count">
         <._counter count={@count}/>
     </div>    

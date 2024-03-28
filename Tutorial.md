@@ -1,4 +1,4 @@
-#HTMX using Elixir
+# HTMX using Elixir
 
 ## Create the Elixir Project
 

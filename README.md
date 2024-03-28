@@ -19,9 +19,13 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
  
  ## Tutorial
- 
-Step by step [tutorial](Tutorial.md) to setup Elixir Phoenix
+
+The tutorial is based on [FULL Introduction To HTMX Using Golang](https://www.youtube.com/watch?v=x7v6SNIgJpE)
+
+  * Setup: step by step [tutorial](Tutorial.md) to setup Elixir Phoenix
 with the basic to work with HTMX
+  * Step 1: 
+
 
 ## HTMX Resources
 

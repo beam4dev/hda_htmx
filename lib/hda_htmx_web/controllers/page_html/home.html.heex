@@ -4,15 +4,29 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content={get_csrf_token()} />
-    <.live_title suffix=" · Phoenix Framework">
+    <.live_title suffix=" · Phoenix Framework with HTMX">
       <%= assigns[:page_title] || "HdaHtmx" %>
     </.live_title>
     <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
     <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
     </script>
+    <script defer phx-track-static type="text/javascript" src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
   </head>
   <body class="bg-white antialiased">
-      Initial Setup
-      Live Reload
+    <h1> Counter Page</h1>
+    <div id="count">
+        <._counter count={@count}/>
+    </div>    
+ 
+    <button 
+       name="_csrf_token"
+       type="hidden"
+       value={get_csrf_token()}
+       hx-target="#count"
+       hx-post={~p"/count"}
+       class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+      Count
+    </button>
+
   </body>
 </html>

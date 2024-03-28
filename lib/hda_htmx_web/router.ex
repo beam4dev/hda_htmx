@@ -8,14 +8,11 @@ defmodule HdaHtmxWeb.Router do
     plug :put_secure_browser_headers
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
-  end
-
   scope "/", HdaHtmxWeb do
     pipe_through :browser
 
     get "/", PageController, :home
+    post "/count", PageController, :count
   end
 
   # Other scopes may use custom stacks.

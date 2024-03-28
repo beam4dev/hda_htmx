@@ -5,6 +5,14 @@ defmodule HdaHtmxWeb.PageController do
   plug(:put_layout, false)
 
   def home(conn, _params) do
-    render(conn, :home)
+    count = HdaHtmx.Counter.value()
+    render(conn, :home, count: count)
+  end
+
+
+  def count(conn, _params) do
+    HdaHtmx.Counter.inc()
+    count = HdaHtmx.Counter.value()
+    render(conn, :_counter, count: count)
   end
 end

@@ -15,6 +15,9 @@ defmodule HdaHtmx.Application do
       {Finch, name: HdaHtmx.Finch},
       # Start a worker by calling: HdaHtmx.Worker.start_link(arg)
       # {HdaHtmx.Worker, arg},
+      {HdaHtmx.Counter, 0},
+
+
       # Start to serve requests, typically the last entry
       HdaHtmxWeb.Endpoint
     ]

@@ -182,7 +182,7 @@ HdaHtmx
 
  A better solution is to 
 
- Create a fragment template _counter.html.heex
+ Create a fragment template `_counter.html.heex`
 ```html
  <%= @count %>
 

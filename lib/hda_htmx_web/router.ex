@@ -12,7 +12,7 @@ defmodule HdaHtmxWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
-    post "/count", PageController, :count
+    post "/contacts", PageController, :contact
   end
 
   # Other scopes may use custom stacks.

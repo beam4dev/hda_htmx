@@ -5,14 +5,22 @@ defmodule HdaHtmxWeb.PageController do
   plug(:put_layout, false)
 
   def home(conn, _params) do
-    count = HdaHtmx.Counter.value()
-    render(conn, :home, count: count)
+    contacts = HdaHtmx.Contacts.contacts()
+    render(conn, :home, contacts: contacts)
   end
 
 
-  def count(conn, _params) do
-    HdaHtmx.Counter.inc()
-    count = HdaHtmx.Counter.value()
-    render(conn, :_counter, count: count)
+
+  def contact(conn, params) do
+    # retrieve the values from the form.
+    name = params["name"]
+    email = params["email"]
+
+    HdaHtmx.Contacts.add(%{name: name, email: email})
+
+    contacts = HdaHtmx.Contacts.contacts()
+     # Redirect or render a template when you're done
+    conn
+     |> render(:_display, contacts: contacts)
   end
 end

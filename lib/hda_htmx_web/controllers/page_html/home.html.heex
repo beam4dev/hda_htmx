@@ -13,20 +13,15 @@
     <script defer phx-track-static type="text/javascript" src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
   </head>
   <body class="bg-white antialiased">
-    <h1> Counter Page</h1>
-    <div id="count">
-        <._counter count={@count}/>
+    <h1><strong>Contacts Page</strong></h1>
+    <div>
+        <._form/>
     </div>    
- 
-    <button 
-       name="_csrf_token"
-       type="hidden"
-       value={get_csrf_token()}
-       hx-target="#count"
-       hx-post={~p"/count"}
-       class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-      Count
-    </button>
 
+    <hr/>
+    <h1><strong>List of Contacts</strong></h1>
+    <div>
+      <._display contacts={@contacts}/>
+    </div>    
   </body>
 </html>

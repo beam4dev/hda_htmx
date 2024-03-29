@@ -16,6 +16,7 @@ defmodule HdaHtmx.Application do
       # Start a worker by calling: HdaHtmx.Worker.start_link(arg)
       # {HdaHtmx.Worker, arg},
       {HdaHtmx.Counter, 0},
+      {HdaHtmx.Contacts, [%{name: "Joe Doe", email: "jdoe@texample.com"}]},
 
 
       # Start to serve requests, typically the last entry

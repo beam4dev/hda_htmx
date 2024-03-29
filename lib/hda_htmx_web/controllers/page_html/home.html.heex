@@ -15,13 +15,28 @@
   <body class="bg-white antialiased">
     <h1><strong>Contacts Page</strong></h1>
     <div>
-        <._form/>
+        <._form values={@data.values} errors={@data.errors}/>
     </div>    
 
     <hr/>
     <h1><strong>List of Contacts</strong></h1>
     <div>
       <._display contacts={@contacts}/>
-    </div>    
+    </div> 
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.body.addEventListener('htmx:beforeSwap', function(evt) {
+          if (evt.detail.xhr.status === 422) {
+            // allow 422 responses to swap as we are using this a singal
+            // a for was submitted with bad data and want to rerender
+            // errors
+            evt.detail.shouldSwap = true;
+            evt.detail.isError = false; 
+          }
+        });
+      })
+    </script>  
+
   </body>
 </html>

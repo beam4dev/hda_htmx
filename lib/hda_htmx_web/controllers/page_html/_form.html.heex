@@ -1,9 +1,11 @@
 <form 
     hx-post={~p"/contacts"}
-    hx-target="#contacts"
   >
-    name: <input type="text" name="name" placeholder="Name" required/>
-    email: <input type="email" name="email" placeholder="Email" required/>   
+    name: <input :if={@values.name} value={@values.name} type="text" name="name" placeholder="Name" required/>
+    email: <input :if={@values.email} value={@values.email} type="email" name="email" placeholder="Email" required/>   
+    <%=if @errors do %>
+        <div style="color: read"><%=@errors.email%></div>
+    <% end %>
     <button 
         name="_csrf_token"
         type="hidden"
